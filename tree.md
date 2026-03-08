@@ -1,11 +1,12 @@
 # File Tree
 <!-- generated from source repository files -->
 
-| File | Lines | Access Rate | Impact |
-|------|-------|-------------|--------|
-| @pinky | 1 | 3 | 8 |
-| README.md | 132 | 7 | 9 |
-| SETUP.md | 267 | 5 | 10 |
-| SKILL.md | 302 | 5 | 10 |
-| install.version | 1 | 2 | 3 |
-| skill.version | 1 | 2 | 3 |
+| File | Lines | Access Rate | Impact | Notes |
+|------|-------|-------------|--------|-------|
+| SKILL.md | 575 | 8 | 10 | Core skill — fetched remotely; session lifecycle, commands, note formats |
+| SETUP.md | 334 | 6 | 10 | Single-source installer; handles INSTALL, UPDATE, RESSURECT modes |
+| README.md | 175 | 7 | 9 | Project docs; configuration reference including all config keys |
+| @plan | 27 | 4 | 7 | Source-root todo file; freeform ideas above separator, AI todos below |
+| @pinky | 1 | 5 | 8 | Line 1: brain repo URL; lines 2+: linked brain repo URLs |
+| install.version | 1 | 2 | 3 | Version stamp for SETUP.md auto-update trigger |
+| skill.version | 1 | 2 | 3 | Version stamp for SKILL.md auto-update trigger |
