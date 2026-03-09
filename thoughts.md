@@ -5,6 +5,11 @@
 <!-- sources: @pinky, SKILL.md -->
 @pinky line 1 is the brain repo URL ({SLUG}.patb), NOT the source repo URL. Lines 2+ are linked brain repo URLs. If missing, create with derived brain URL on line 1. This changed from earlier versions where line 1 was the source URL.
 
+#### Resync: sync can fail on local brain alias remote
+<!-- rating: 760 | created: 2026-03-09 | last_used: 2026-03-09 | concepts: resync, sync, brain-remote, git -->
+<!-- sources: @pinky -->
+If mcp_patb_sync fails with 'cannot pull with rebase: You have unstaged changes', verify the active brain clone path. In this workspace, ~/.patb/pinky-and-the-brain-patb.patb tracked a local non-bare origin path, causing push rejection. Fix by setting origin to the URL on line 1 of @pinky, then push and rerun sync.
+
 #### SETUP.md is the single-source installer
 <!-- rating: 750 | created: 2026-03-08 | last_used: 2026-03-09 | concepts: install, setup -->
 <!-- sources: SETUP.md -->
