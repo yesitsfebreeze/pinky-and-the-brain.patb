@@ -1,6 +1,9 @@
 # Changes
 <!-- cross-project-relevant changes are logged here -->
 
+#### 2026-03-09 — Resync from latest main
+Resync re-installed p&b from latest main: added PATB_URL to @brain (brain repo uses hyphens, source uses underscores), updated tree.md line counts, removed TODOS.md (merged into @plan), indexed SKILL.md/SETUP.md/README.md updates from recent commits.
+
 #### 2026-03-09 — Phase 4: @commit, @plan, rating scale 0-1000
 @commit creates per-scope commits; @plan replaces PLAN.md as source-root todo file with @process command; rating scale bumped from 0-100 to 0-1000 (old notes ×10 on load).
 

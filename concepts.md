@@ -30,19 +30,19 @@
 <!-- files: SKILL.md, @pinky -->
 
 #### install
-<!-- related: setup -->
+<!-- related: setup, version-check, skill -->
 <!-- files: SETUP.md -->
 
 #### memory-lifecycle
-<!-- related: prune, rating, context-loading -->
+<!-- related: prune, rating, context-loading, reasoning -->
 <!-- files: SKILL.md -->
 
 #### pinky
-<!-- related: identity, brain-repo, config -->
+<!-- related: identity, brain-repo, config, plan, workflow -->
 <!-- files: @pinky, SKILL.md -->
 
 #### plan
-<!-- related: workflow, todos -->
+<!-- related: workflow, todos, pinky -->
 <!-- files: @plan, SKILL.md -->
 
 #### prune
@@ -50,7 +50,11 @@
 <!-- files: SKILL.md -->
 
 #### rating
-<!-- related: memory-lifecycle -->
+<!-- related: memory-lifecycle, reasoning -->
+<!-- files: SKILL.md -->
+
+#### reasoning
+<!-- related: rating, memory-lifecycle -->
 <!-- files: SKILL.md -->
 
 #### related-notes
@@ -70,7 +74,7 @@
 <!-- files: SETUP.md -->
 
 #### skill
-<!-- related: version-check -->
+<!-- related: version-check, install -->
 <!-- files: SKILL.md -->
 
 #### slug
@@ -86,9 +90,9 @@
 <!-- files: @plan -->
 
 #### version-check
-<!-- related: skill -->
+<!-- related: skill, install -->
 <!-- files: SKILL.md, install.version, skill.version -->
 
 #### workflow
-<!-- related: commit, plan, todos -->
+<!-- related: commit, plan, todos, pinky -->
 <!-- files: SKILL.md, @plan -->

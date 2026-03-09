@@ -45,15 +45,35 @@ The rating scale is 0–1000 (bumped from 0–100 in Phase 4). Old notes with ra
 <!-- sources: SKILL.md -->
 The `@commit` command groups changed files by scope (feature, fix, refactor, docs, etc.) and creates one commit per scope, then pushes. After push, the post-push hook runs: fetch both repos, compare source HEAD vs sync.md, index new commits into thoughts.md/tree.md/changes.md.
 
-#### @plan / @process workflow
+#### @plan / @play workflow
 <!-- rating: 600 | created: 2026-03-09 | last_used: 2026-03-09 | concepts: plan, workflow, todos -->
 <!-- sources: @plan, SKILL.md -->
-@plan is a todo file at source root. Content above the thick separator (█████) is freeform ideas/text. Content below is AI-generated todos. `@process` triggers AI to pick the most impactful next todo, gather context, solve it, delete the todo, then commit. Renamed from PLAN.md → @brain (source) → @plan across phases.
+@plan is a todo file at source root. Content above the thick separator (█████) is freeform ideas/text. Content below is AI-generated todos. `@play` triggers AI to pick the most impactful next todo, gather context, solve it, delete the todo, then commit. In plan mode (entered via `@plan`), each user message is silently captured into @plan above the separator. `@exit` exits plan or play mode.
 
 #### SLUG derivation
 <!-- rating: 550 | created: 2026-03-08 | last_used: 2026-03-09 | concepts: identity, slug -->
 <!-- sources: SKILL.md -->
 SLUG derivation: last URL path segment → strip .git → lowercase → replace non-alphanum (except - _) with -. BRAIN_ROOT = ~/.patb/{SLUG}.patb/. BRAIN_REPO_URL priority: PATB_URL from @brain → @pinky line 1 → derived {SOURCE_REPO_URL}.patb.
+
+#### After Reasoning scoring adjusts note ratings
+<!-- rating: 700 | created: 2026-03-09 | last_used: 2026-03-09 | concepts: rating, memory-lifecycle, reasoning -->
+<!-- sources: SKILL.md -->
+After answering any query that loaded notes, run a mandatory scoring pass: notes used in response +300, confirmed by code +500, loaded but unreferenced -100, contradicted -800. Clamp to 0–1000. Remove notes below MIN_RATING. Update `last_used`. Re-sort and commit immediately.
+
+#### @pinky STATUS line persists plan/play mode
+<!-- rating: 650 | created: 2026-03-09 | last_used: 2026-03-09 | concepts: plan, workflow, pinky -->
+<!-- sources: @pinky, SKILL.md -->
+@pinky can contain a `STATUS: plan|play|idle` line. On session start, restore the saved mode: STATUS=plan → resume plan mode; STATUS=play → resume play mode. Helpers: `WRITE STATUS {mode}` (upsert the line), `CLEAR STATUS` (remove it). Only URL lines (http/git@) count as linked repos — skip STATUS and other non-URL lines.
+
+#### Version check at session start triggers auto-update
+<!-- rating: 650 | created: 2026-03-09 | last_used: 2026-03-09 | concepts: version-check, install, skill -->
+<!-- sources: SKILL.md -->
+At session start, fetch remote install.version and skill.version. Compare line 2 (timestamp) against {BRAIN_ROOT}/install.version and ~/.agents/skills/patb/skill.version. If either local file is missing or any remote timestamp is newer, fetch and execute SETUP.md in UPDATE mode to auto-update.
+
+#### Context Assembly order after load passes
+<!-- rating: 550 | created: 2026-03-09 | last_used: 2026-03-09 | concepts: context-loading, selection -->
+<!-- sources: SKILL.md -->
+After Load Memory and Cross-Project Context passes, assemble: (1) Notes block — selected notes up to MAX_CONTEXT_NOTES, local first then cross-project labeled by slug; (2) File tree — top MAX_CONTEXT_FILES tree.md rows by Impact; (3) Recent cross-project changes — last 7 days from linked repos' changes.md.
 
 #### PATB_URL overrides brain repo URL
 <!-- rating: 550 | created: 2026-03-09 | last_used: 2026-03-09 | concepts: config, brain-repo, identity -->
