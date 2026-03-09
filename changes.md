@@ -1,6 +1,9 @@
 # Changes
 <!-- cross-project-relevant changes are logged here -->
 
+#### 2026-03-09 — Phase 5 complete: MCP fast paths added to play.md
+Added MCP fast paths to skills/play.md for mcp_patb_plan_next (step 3) and mcp_patb_plan_complete (step 6). Phase 5 marked complete in @plan sequencing. All 18 smoke tests pass.
+
 #### 2026-03-09 — Resync from latest main
 Resync re-installed p&b from latest main: added PATB_URL to @brain (brain repo uses hyphens, source uses underscores), updated tree.md line counts, removed TODOS.md (merged into @plan), indexed SKILL.md/SETUP.md/README.md updates from recent commits.
 
